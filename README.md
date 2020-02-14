@@ -8,4 +8,4 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 
 | Fecha         | Tema                              | Material |
 |---------------|-----------------------------------|----------|
-| 14/02 :heart: | Introducción a Haskell            | [Sesión 1](sesion01/) |
+| 14/02 :heart: | Introducción a Haskell            | [Sesión 1](sesion01/README.md) |
