@@ -1,31 +1,86 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 01`](../README.md) > `Ejemplo 01`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 01`](../README.md) > `Ejemplo 02`
 
-## Ejemplo 1: Instalación de Haskell
+## Ejemplo 1: Tipos de Datos Primitivos
 
 ### OBJETIVO
 
-- Instalar Haskell en un equipo con Windows.
+- Conocer los principales tipos de datos de Haskell.
 
 #### REQUISITOS
 
-Ninguno.
+- WinGHCi instalado.
 
 #### DESARROLLO
 
-1. Ingresa a la página del instalador: [https://www.haskell.org/platform/windows.html](https://www.haskell.org/platform/windows.html).
+Para comenzar, se presentan los tipos de datos primitivos, se usa el intérprete para visualizar cómo es que
+se evalúan estas expresiones.
 
-2. Elegir el instalador (ya sea de 32 o de 64 bits) y después dar clic en el botón con el nombre del archivo
-para iniciar la descarga.
+##### Tipos básicos
 
-3. Abrir el archivo `.exe` que se descargó y seguir las instrucciones.
+**Booleanos (`Bool`)**
 
-3. Verificar que el archivo de configuración de cabal (puede verificarse ejecutando el siguiente comando
-en una terminal: cabal user-config init) contiene las siguientes líneas:
+Para representar booleanos, se tienen el tipo de dato `Bool` con las constantes lógicas `True` y `False` para
+representar verdadero y falso respectivamente.
 
-   ```bash
-   extra - prog - path : C :\ Program Files \ Haskell Platform \8.6.3\ msys \ usr \ bin
-   extra - lib - dirs : C :\ Program Files \ Haskell Platform \8.6.3\ mingw \ lib
-   extra - include - dirs : C :\ Program Files \ Haskell Platform \8.6.3\ mingw \ include
-   ```
-*Nota:* Para instalar en otro sistema operativo, pregunta al profesor.   
-   
+```haskell
+Prelude> True
+True
+Prelude> False
+False
+```
+
+**Números enteros (`Int`, `Integer`)**
+
+El tipo `Int` representa números enteros acotados, en arquitecturas de 32 bits, el valor máximo es 2147483647
+y el valor mínimo es -2147483648.
+
+```haskell
+Prelude> 1729
+1729
+Prelude> (-12)
+-12
+```
+
+*Observación*: Los números enteros negativos, en Haskell, deben ir delimitados por paréntesis.
+
+El tipo `Integer` representa números enteros no acotados, es decir, de longitud variable.
+
+```haskell
+Prelude> 238708143957089435708139923489
+238708143957089435708139923489
+```
+
+**Números reales (`Float`, `Double`)**
+
+El tipo `Float` representa números reales de precisión simple, mientras que el tipo `Double` representa números
+reales de precisión doble.
+
+```haskell
+Prelude> 25.132742
+25.132742
+Prelude> 25.13285723183498
+25.13285723183498
+```
+
+**Caracteres (`Char`)**
+
+Los caracteres se delimitan, como en la mayoría de lenguajes de programación, por símbolos de comilla
+simple.
+
+```haskell
+> ’a’
+’a’
+> ’E’
+’E’
+```
+
+**Cadenas (`String`)**
+
+Las cadenas son agrupaciones de caracteres y de delimitan por comillas dobles.
+
+```haskell
+> “Hola mundo”
+“Hola mundo”
+```
+
+Existen, en Haskell, otros tipos básicos, su representación y usos se discutirán más adelante.
