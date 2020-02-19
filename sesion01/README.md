@@ -13,7 +13,7 @@
 
 - Instalación de Haskell
    - [Ejemplo 1](ejemplo01/README.md)
-- Tipos de datos básicos
+- Tipos de datos primitivos
    - [Ejemplo 2](ejemplo02/README.md)
 - Funciones predefinidas
    - [Ejemplo 3](ejemplo03/README.md)
