@@ -1,6 +1,6 @@
 [`Lenguajes de Programación`](../../README.md) > [`Sesión 01`](../README.md) > `Ejemplo 02`
 
-## Ejemplo 1: Tipos de Datos Primitivos
+## Ejemplo 2: Tipos de Datos Primitivos
 
 ### OBJETIVO
 
