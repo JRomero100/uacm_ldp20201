@@ -1,4 +1,4 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 01`](../README.md) > `Actividad`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 02`](../README.md) > `Actividad`
 
 ## Actividad
 
