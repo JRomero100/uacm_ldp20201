@@ -18,5 +18,5 @@
 - Funciones predefinidas
    - [Ejemplo 3](ejemplo03/README.md)
 - Definición de funciones
-   - [Ejemplo 4](ejemplo03/README.md)
+   - [Ejemplo 4](ejemplo04/README.md)
    - [Actividad 1](actividad01/README.md)
