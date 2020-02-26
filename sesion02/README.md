@@ -1,22 +1,16 @@
-[`Lenguajes de Programación`](../README.md) > `Sesión 01`
+[`Lenguajes de Programación`](../README.md) > `Sesión 02`
 
-## Introducción a Haskell
+## Asignaciones locales y condicionales
 
 ### OBJETIVOS 
 
-- Instalar Haskell
-- Conocer los tipos básicos del lenguaje
-- Conocer algunas funciones predefinidas sobre los tipos básicos
-- Definir funciones básicas y conocer su sintaxis
+- Conocer la estructura de las principales asignaciones locales de __Haskell__
+- Conocer los principales tipos de condicionales: `if` y guardias.
 
 #### ORGANIZACION DE LA CLASE
 
-- Instalación de Haskell
+- Asignaciones locales
    - [Ejemplo 1](ejemplo01/README.md)
-- Tipos de datos primitivos
+- Condicionales
    - [Ejemplo 2](ejemplo02/README.md)
-- Funciones predefinidas
-   - [Ejemplo 3](ejemplo03/README.md)
-- Definición de funciones
-   - [Ejemplo 4](ejemplo04/README.md)
    - [Actividad](actividad/README.md)
