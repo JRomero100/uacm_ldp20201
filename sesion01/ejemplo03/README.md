@@ -78,5 +78,6 @@ Prelude> length "Manzana"
 7
 Prelude> "Manzana" !! 3
 ’z’
-Prelude> "Man" ++ "zana" "Manzana"
+Prelude> "Man" ++ "zana" 
+"Manzana"
 ```
