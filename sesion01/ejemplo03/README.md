@@ -130,3 +130,5 @@ areaCirculo 16 = 201.06
 areaCirculo :: Float -> Float
 areaCirculo d = pi * (d / 2) * ( d / 2)
 ```
+
+Descarga estas definiciones [aquí](Ejemplo1.hs)
