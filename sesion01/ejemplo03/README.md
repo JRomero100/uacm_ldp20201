@@ -12,74 +12,71 @@
 
 #### DESARROLLO
 
-Usaremos el el intérprete para visualizar cómo es quese evalúan estas funciones.
+Para usar funciones sobre los tipos básicos, debe especificarse el nombre de la función a aplicar e indicar los
+argumentos de la función separando cada uno por espacios. A continuación se presentan algunos ejemplos.
 
-##### Tipos básicos
+##### Funciones lógicas
 
-**Booleanos (`Bool`)**
-
-Para representar booleanos, se tienen el tipo de dato `Bool` con las constantes lógicas `True` y `False` para
-representar verdadero y falso respectivamente.
+Se tienen funciones básicas de la lógica como son la negación, conjunción, disyunción y algunas otras de
+comparación.
 
 ```haskell
-Prelude> True
+Prelude> not True
+False
+Prelude> True && False
+False
+Prelude> False || True
 True
-Prelude> False
+Prelude> 1 == 1
+True
+Prelude> 1 /= 1
 False
 ```
 
-**Números enteros (`Int`, `Integer`)**
+Como puede apreciarse, la función `not` representa la negación, la función `&&` la conjunción y finalmente, la
+función `||` la disyunción de expresiones lógicas.
 
-El tipo `Int` representa números enteros acotados, en arquitecturas de 32 bits, el valor máximo es 2147483647
-y el valor mínimo es -2147483648.
+*Observación*: Es importante destacar que todas las funciones de Haskell, son en un principio prefijas, sin embargo, existen algunas funciones que pueden usarse infijamente siempre y cuando, éstas reciban dos parámetros. La disyunción y conjunción son ejemplos de estas funciones.
 
-```haskell
-Prelude> 1729
-1729
-Prelude> (-12)
--12
-```
+##### Funciones aritméticas
 
-*Observación*: Los números enteros negativos, en Haskell, deben ir delimitados por paréntesis.
-
-El tipo `Integer` representa números enteros no acotados, es decir, de longitud variable.
+Al igual que las funciones lógicas, la mayoría de funciones aritméticas funcionan infijamente. Para usar una
+función prefija que recibe dos parámetros de manera infija se puede delimitar el nombre de la función por el
+símbolo ‘ como es el caso de la función `div`.
 
 ```haskell
-Prelude> 238708143957089435708139923489
-238708143957089435708139923489
+Prelude> 1 + 2 + 3
+6
+Prelude> 2/3 - 1/3
+0.3333333333333333
+Prelude> 2 * 3 * 6
+36
+Prelude> 10 / 2 / 2
+2.5
+Prelude> div 5 2
+2
+Prelude> 5 ‘div‘ 2
+2
+Prelude> 2^3
+8
+Prelude> 2**3
+8.0
+Prelude> sqrt 81
+9
+Prelude> mod 10 2
+0
+Prelude> max 1 2
+2
+Prelude> min 1 2
+1
 ```
 
-**Números reales (`Float`, `Double`)**
-
-El tipo `Float` representa números reales de precisión simple, mientras que el tipo `Double` representa números
-reales de precisión doble.
+##### Manejo de cadenas
 
 ```haskell
-Prelude> 25.132742
-25.132742
-Prelude> 25.13285723183498
-25.13285723183498
+Prelude> length "Manzana"
+7
+Prelude> "Manzana" !! 3
+’z’
+Prelude> "Man" ++ "zana" "Manzana"
 ```
-
-**Caracteres (`Char`)**
-
-Los caracteres se delimitan, como en la mayoría de lenguajes de programación, por símbolos de comilla
-simple.
-
-```haskell
-> ’a’
-’a’
-> ’E’
-’E’
-```
-
-**Cadenas (`String`)**
-
-Las cadenas son agrupaciones de caracteres y de delimitan por comillas dobles.
-
-```haskell
-> “Hola mundo”
-“Hola mundo”
-```
-
-Existen, en Haskell, otros tipos básicos, su representación y usos se discutirán más adelante.
