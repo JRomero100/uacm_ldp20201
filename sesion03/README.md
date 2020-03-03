@@ -1,9 +1,9 @@
 [`Lenguajes de Programación`](../README.md) > `Sesión 03`
 
-# LENGUAJES DE PROGRAMACIÓN
-## SESIÓN 3: LISTAS
+## LENGUAJES DE PROGRAMACIÓN
+### SESIÓN 3: LISTAS
 
-### OBJETIVOS 
+#### OBJETIVOS 
 
 - Conocer el concepto de lista en el lenguaje __HASKELL__.
 - Escribir expresiones que hagan uso de listas.
