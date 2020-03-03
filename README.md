@@ -9,4 +9,5 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 | Fecha | Tema                                 | Material |
 |-------|--------------------------------------|----------|
 | 18/02 | Introducción a Haskell               | [Sesión 1](sesion01/README.md) |
-| 25/02 | Asignaciones locales y condicionales | [Sesión 2](sesion02/README.md) | 
+| 25/02 | Asignaciones locales y condicionales | [Sesión 2](sesion02/README.md) |
+| 03/03 | Listas                               | [Sesión 3](sesion03/README.md) |
