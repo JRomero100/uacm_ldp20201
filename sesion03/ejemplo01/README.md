@@ -1,10 +1,10 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 02`](../README.md) > `Ejemplo 01`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Ejemplo 01`
 
-## Ejemplo 1: Asignaciones locales
+## Ejemplo 1: Definición de listas
 
 ### OBJETIVO
 
-- Conocer las principales asignaciones locales de __Haskell__.
+- Conocer la sintaxis para manejar listas en __HASKELL__.
 
 #### REQUISITOS
 
@@ -12,47 +12,23 @@
 
 #### DESARROLLO
 
-En la sesión pasada, definimos una función que calcula el área de un círculo a partir de su diámetro. Esta función, muestra un cálculo repetido: la división del parámetro `d` entre 2. Este tipo de cálculo resulta ser inefiniciente, por lo que Haskell provee dos formas: `let` y `where` que permiten definir variables con alcance local.
+Una lista es una estructura de datos *recursiva* definida mediante los conceptos de *cabeza* y *resto* de la lista. De la misma forma se tienen lista vacía, representadas por `[]`.
 
-##### Asignaciones locales con `let`
-
-La primitiva let tiene la siguiente sintaxis:
+   - La cabeza de la lista representa al primer elemento.
+   - El resto de la lista representa la lista que se encuentra justo después del primer elemento.
+   
+Por ejemplo, podemos definir una lista con los números enteros del 1 al 5. Para construir listas se usa el operador `cons` que toma una cabeza y un resto y genera la lista correspondiente. La operación `cons` se representa por el símbolo `:`. Veamos cómo construir la lista.
 
 ```haskell
-let <variable> = <valor> in
-   <cuerpo>
+Prelude> 1:2:3:4:5:[]
+[1,2,3,4,5]
 ```
 
-Esta primitiva permite asignar un nombre a expresiones a través de variables con alcance local. De esta
-forma, se obtiene una expresión más eficiente, en cuanto a la evaluación se refiere, debido a que el valor
-asociado a la variable o asignación local, sólo se calcula una vez.
-
-**Ejemplo.** Modificar la función `areaCirculo` para que haga uso de la primitiva `let` y evite cálculos
-repetitivos.
+Esta representación es útil para construir listas a través de programación, sin embargo, para definir listas con elementos concretos, basta con definir los elementos de la lista, separando cada uno con comas y delimitando la expresión con corchetes. Por ejemplo:
 
 ```haskell
--- Función que calcula el área de un círculo dado su diámetro .
-areaCirculo2 :: Float -> Float
-areaCirculo2 d =
-let r = (d / 2) in
-   pi * r * r
+Prelude> [1,2,3,4,5]
+[1,2,3,4,5]
 ```
 
-##### Asignaciones locales con `where`
-
-A diferencia de `let`, `where` no es una expresión por sí misma pues debe aparecer siempre dentro de la
-especificación de una función. La sintaxis de una función que usa `where` es la siguiente:
-
-```haskell
-<nombreFuncion> <parametro1> ... = <resultado>
-   where <variable> = <valor>
-```
-
-**Ejemplo.** Modificar la función `areaCirculo` para que haga uso de `where` y evite cálculos repetitivos.
-
-```haskell
--- Función que calcula el área de un círculo dado su diámetro .
-areaCirculo3 :: Float -> Float
-areaCirculo3 d = pi * r * r
-   where r = (d / 2)
-```   
+**Observación.** *Los elementos de las listas son de tipo **homogéneo**. Esto quiere decir que todos deben ser del mismo tipo de dato*.
