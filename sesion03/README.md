@@ -1,16 +1,24 @@
-[`Lenguajes de Programación`](../README.md) > `Sesión 02`
+[`Lenguajes de Programación`](../README.md) > `Sesión 03`
 
-## Asignaciones locales y condicionales
+# LENGUAJES DE PROGRAMACIÓN
+## SESIÓN 3: LISTAS
 
 ### OBJETIVOS 
 
-- Conocer la estructura de las principales asignaciones locales de __Haskell__
-- Conocer los principales tipos de condicionales: `if` y guardias.
+- Conocer el concepto de lista en el lenguaje __HASKELL__.
+- Escribir expresiones que hagan uso de listas.
+- Conocer algunas de las principales funciones sobre listas.
+- Definir listas por comprensión.
 
 #### ORGANIZACION DE LA CLASE
 
-- Asignaciones locales
+- Definición de listas y funciones predefinidas
    - [Ejemplo 1](ejemplo01/README.md)
-- Condicionales
+- Funciones de orden superior
    - [Ejemplo 2](ejemplo02/README.md)
-   - [Actividad](actividad/README.md)
+- Listas por comprensión
+   - [Ejemplo 2](ejemplo02/README.md)
+   
+#### ACTIVIDAD
+
+[Actividad](ejemplo02/README.md)
