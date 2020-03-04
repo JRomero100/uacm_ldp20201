@@ -19,7 +19,7 @@
 - Funciones de orden superior
    - [Ejemplo 3](ejemplo03/README.md)
 - Listas por comprensión
-   - [Ejemplo 4](ejemplo05/README.md)
+   - [Ejemplo 4](ejemplo04/README.md)
    
 #### ACTIVIDAD
 
