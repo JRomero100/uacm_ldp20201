@@ -15,12 +15,12 @@
 - Definición de tuplas y funciones predefinidas
    - [Ejemplo 1](ejemplo01/README.md)
 - Definición de listas y funciones predefinidas
-   - [Ejemplo 1](ejemplo01/README.md)
+   - [Ejemplo 2](ejemplo02/README.md)
 - Funciones de orden superior
-   - [Ejemplo 2](ejemplo02/README.md)
+   - [Ejemplo 3](ejemplo03/README.md)
 - Listas por comprensión
-   - [Ejemplo 2](ejemplo02/README.md)
+   - [Ejemplo 4](ejemplo05/README.md)
    
 #### ACTIVIDAD
 
-[Actividad](ejemplo02/README.md)
+[Actividad](actividad/README.md)
