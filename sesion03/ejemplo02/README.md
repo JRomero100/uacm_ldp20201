@@ -1,90 +1,107 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 02`](../README.md) > `Ejemplo 02`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Ejemplo 01`
 
-## Ejemplo 2: Condicionales
+## Ejemplo 1: Definición de listas
 
 ### OBJETIVO
 
-- Conocer los principales tipos de condicionales de __Haskell__.
+- Conocer la sintaxis para manejar listas en __HASKELL__.
 
 #### REQUISITOS
 
-- WinGHCi instalado.
+- WinGHCi instalado
 
 #### DESARROLLO
 
-De la misma forma que en matemáticas, en Haskell pueden definirse funciones por partes de acuerdo a
-ciertas condiciones. Para establecer estas condiciones existen principalmente dos primitivas: `if` y guardias.
-La primera primitiva es usada por lo general cuando se tiene una única condición mientras que la segunda
-se usa cuando se tienen dos o más condiciones.
+Una lista es una estructura de datos *recursiva* definida mediante los conceptos de *cabeza* y *resto* de la lista. De la misma forma se tienen lista vacía, representadas por `[]`.
 
-##### Condicional `if`
-
-La sintaxis del condicional `if` es la siguiente:
+   - La cabeza de la lista representa al primer elemento.
+   - El resto de la lista representa la lista que se encuentra justo después del primer elemento.
+   
+Por ejemplo, podemos definir una lista con los números enteros del 1 al 5. Para construir listas se usa el operador `cons` que toma una cabeza y un resto y genera la lista correspondiente. La operación `cons` se representa por el símbolo `:`. Veamos cómo construir la lista.
 
 ```haskell
-if <condición> then <then-expr> else <else-expr>
+Prelude> 1:2:3:4:5:[]
+[1,2,3,4,5]
 ```
 
-El primer valor `<condición>` debe ser una expresión booleana, el segundo valor `<then-expr>` se evaluará
-siempre que la condición sea verdadera, y el tercer valor `<else-expr>` se ejecutará cuando no lo sea.
-
-**Ejemplo.** Definir la función `valorAbsoluto` tal que `(valorAbsoluto x)` es el valor absoluto de un
-número entero. Por ejemplo:
+Esta representación es útil para construir listas a través de programación, sin embargo, para definir listas con elementos concretos, basta con definir los elementos de la lista, separando cada uno con comas y delimitando la expresión con corchetes. Por ejemplo:
 
 ```haskell
-valorAbsoluto 1729 = 1729
-valorAbsoluto -265 = 265
+Prelude> [1,2,3,4,5]
+[1,2,3,4,5]
 ```
 
-```haskell
--- Función que calcula el valor absoluto de un número entero.
-valorAbsoluto : Integer -> Integer
-valorAbsoluto x = if x < 0 then x * (-1) else x
-```
+**Observación.** *Los elementos de las listas son de tipo **homogéneo**. Esto quiere decir que todos deben ser del mismo tipo de dato*.
 
-La condición se encuentra en la línea 3 `(x < 0)`, si el valor de entrada es menor que cero, entonces se
-multiplicará el mismo por -1 y en caso contrario se regresa el valor tal cual.
+##### Funciones sobre listas
 
-##### Guardias
+Algunas funciones definidas para lista son:
 
-Al igual que `where`, las guardias sólo pueden usarse con funciones. La sintaxis de una función que hace uso
-de guardias, es la siguiente:
+- `reverse` Invierte una lista.
 
-```haskell
-<nombreFuncion> <parametro1> ...
-  | <condición1> = <expresión1>
-  ...
-  | otherwise = <expresión2>
-```
+   ```haskell
+   Prelude> reverse [1,2,3,4]
+   [4,3,2,1]
+   ```
+   
+- `++` Concatena dos listas.
 
-Se tienen una serie de expresiones de la forma `<condición> = <expresion>` representando los posibles
-casos y el valor a devolver en caso de que se cumpla la condición. Opcionalmente se tiene un caso otherwise
-que se evalúa siempre que ninguna condición anterior haya sido verdadera.
+   ```haskell
+   Prelude> [1,2,3] ++ [4,5,6]
+   [1,2,3,4,5,6]
+   ```
+   
+- `!!` Obtiene el *n*-ésimo elemento de una lista.
 
-**Ejemplo 8.** Definir la función `nombreMes` tal que `(nombreMes n)` es el nombre del mes representado por
-el número entero `n`. Por ejemplo:
+   ```haskell
+   Prelude> [1,2,3] !! 1
+   2
+   ```
 
-```haskell
-nombreMes 8 = "Agosto"
-nombreMes 10 = "Octubre"
-nombreMes 11 = "Noviembre"
-```
+- `head` Obtiene la cabeza de una lista.
 
-```haskell
--- Función que obtiene el nombre del mes representado por el número
--- recibido como parámetro.
-nombreMes :: Integer -> String
-nombreMes n
-  | n == 1 = "Enero"
-  | n == 2 = "Febrero"
-  | n == 3 = "Marzo"
-  | n == 4 = "Abril"
-  | n == 5 = "Mayo"
-  | n == 6 = "Junio"
-  | n == 7 = "Julio"
-  | n == 8 = "Agosto"
-  | n == 9 = "Septiembre"
-  | n == 10 = "Octubre"
-  | n == 11 = "Noviembre"
-  | n == 12 = "Diciembre"
-  | otherwise = error "Mes inválido"
+   ```haskell
+   Prelude> head [1,2,3]
+   1
+   ```
+
+- `tail` Obtiene el resto de una lista.
+
+   ```haskell
+   Prelude> tail [1,2,3]
+   [2,3]
+   ```
+
+- `last` Obtiene el último elemento de una lista.
+   
+   ```haskell
+   Prelude> last [1,2,3]
+   3
+   ```
+   
+- `init` Obtiene la lista sin el último elemento.
+
+   ```haskell
+   Prelude> init [1,2,3]
+   [1,2]
+   ```
+   
+- `take` Toma los primeros *n* elementos de una lista.
+
+   ```haskell
+   Prelude> take 2 [1,2,3]
+   [1,2]
+   ```
+   
+- `drop` Elimina los primeros *n* elementos de una lista.
+
+   ```haskell
+   Prelude> drop 2 [1,2,3]
+   [3]
+   ```
+
+En la siguiente imagen podemos apreciar los elementos básicos de una lista.
+
+![imagen](http://s3.amazonaws.com/lyah/listmonster.png)
+
+*Tomada de: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)*
