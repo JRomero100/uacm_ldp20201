@@ -1,10 +1,10 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 01`](../README.md) > `Ejemplo 02`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Ejemplo 03`
 
-## Ejemplo 3: Funciones predefinidas
+## Ejemplo 3: Funciones de orden superior 
 
 ### OBJETIVO
 
-- Conocer algunas de las principales funciones de __Haskell__.
+- Usar funciones de orden superior para resolver algunos problemas.
 
 #### REQUISITOS
 
@@ -12,72 +12,36 @@
 
 #### DESARROLLO
 
-Para usar funciones sobre los tipos básicos, debe especificarse el nombre de la función a aplicar e indicar los
-argumentos de la función separando cada uno por espacios. A continuación se presentan algunos ejemplos.
+En Haskell, las funciones pueden ser pasadas como parámetro. En particular con el uso de listas, existen funciones que reciben otras funciones, llamadas *funciones de orden superior*.
 
-##### Funciones lógicas
+##### Mapeos
 
-Se tienen funciones básicas de la lógica como son la negación, conjunción, disyunción y algunas otras de
-comparación.
+Un *mapeo* o simplemente `map` es el resultado de aplicar una función a cada elemento de una estructura. Por ejemplo, en Haskell tenemos la función `map` aplica una función a cada elemento de una lista. 
 
 ```haskell
-Prelude> not True
-False
-Prelude> True && False
-False
-Prelude> False || True
-True
-Prelude> 1 == 1
-True
-Prelude> 1 /= 1
-False
+Prelude> map mes [1,2,3]
+["Enero", "Febrero", "Marzo"]
 ```
 
-Como puede apreciarse, la función `not` representa la negación, la función `&&` la conjunción y finalmente, la
-función `||` la disyunción de expresiones lógicas.
+La filta de `map` es la siguiente:
 
-*Observación*: Es importante destacar que todas las funciones de Haskell, son en un principio prefijas, sin embargo, existen algunas funciones que pueden usarse infijamente siempre y cuando, éstas reciban dos parámetros. La disyunción y conjunción son ejemplos de estas funciones.
+`map :: (a -> b) -> [a] -> [b]`
 
-##### Funciones aritméticas
+*Recibe una función de `a` a `b`, una lista de `a` y devuelve una lista de `b`*.
 
-Al igual que las funciones lógicas, la mayoría de funciones aritméticas funcionan infijamente. Para usar una
-función prefija que recibe dos parámetros de manera infija se puede delimitar el nombre de la función por el
-símbolo ‘ como es el caso de la función `div`.
+##### Filtros
+
+Un *filtro* como su nombre lo dice, filtra los elementos que cumplen con una condición que es expresada mediante una función. Por ejemplo, supongamos que queremos los números pares de una lista.
 
 ```haskell
-Prelude> 1 + 2 + 3
-6
-Prelude> 2/3 - 1/3
-0.3333333333333333
-Prelude> 2 * 3 * 6
-36
-Prelude> 10 / 2 / 2
-2.5
-Prelude> div 5 2
-2
-Prelude> 5 ‘div‘ 2
-2
-Prelude> 2^3
-8
-Prelude> 2**3
-8.0
-Prelude> sqrt 81
-9
-Prelude> mod 10 2
-0
-Prelude> max 1 2
-2
-Prelude> min 1 2
-1
+Prelude> filter even [1,2,3,4]
+[2,4]
 ```
 
-##### Manejo de cadenas
+Lo que hace esta función es aplicar la función recibida a cada elemento de la lista, si al aplicar la función el resultado es verdadero, entonces deja el resultado en la lista, en caso contrario, lo quita.
 
-```haskell
-Prelude> length "Manzana"
-7
-Prelude> "Manzana" !! 3
-’z’
-Prelude> "Man" ++ "zana" 
-"Manzana"
-```
+La filta de `filter` es la siguiente:
+
+`filter :: (a -> Bool) -> [a] -> [a]`
+
+*Recibe una función de `a` a `Bool`, una lista de `a` y devuelve una lista de `a`*.
