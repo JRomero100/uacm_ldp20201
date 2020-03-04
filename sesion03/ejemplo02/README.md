@@ -1,6 +1,6 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Ejemplo 01`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Ejemplo 02`
 
-## Ejemplo 1: Definición de listas
+## Ejemplo 2: Definición de listas
 
 ### OBJETIVO
 
