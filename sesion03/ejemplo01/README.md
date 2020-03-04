@@ -32,3 +32,74 @@ Prelude> [1,2,3,4,5]
 ```
 
 **Observación.** *Los elementos de las listas son de tipo **homogéneo**. Esto quiere decir que todos deben ser del mismo tipo de dato*.
+
+##### Funciones sobre listas
+
+Algunas funciones definidas para lista son:
+
+- `reverse` Invierte una lista.
+
+   ```haskell
+   Prelude> reverse [1,2,3,4]
+   [4,3,2,1]
+   ```
+   
+- `++` Concatena dos listas.
+
+   ```haskell
+   Prelude> [1,2,3] ++ [4,5,6]
+   [1,2,3,4,5,6]
+   ```
+   
+- `!!` Obtiene el *n*-ésimo elemento de una lista.
+
+   ```haskell
+   Prelude> [1,2,3] !! 1
+   2
+   ```
+
+- `head` Obtiene la cabeza de una lista.
+
+   ```haskell
+   Prelude> head [1,2,3]
+   1
+   ```
+
+- `tail` Obtiene el resto de una lista.
+
+   ```haskell
+   Prelude> tail [1,2,3]
+   [2,3]
+   ```
+
+- `last` Obtiene el último elemento de una lista.
+   
+   ```haskell
+   Prelude> last [1,2,3]
+   3
+   ```
+   
+- `init` Obtiene la lista sin el último elemento.
+
+   ```haskell
+   Prelude> init [1,2,3]
+   [1,2]
+   ```
+   
+- `take` Toma los primeros *n* elementos de una lista.
+
+   ```haskell
+   Prelude> take 2 [1,2,3]
+   [1,2]
+   ```
+   
+- `drop` Elimina los primeros *n* elementos de una lista.
+
+   ```haskell
+   Prelude> drop 2 [1,2,3]
+   [3]
+   ```
+
+En la siguiente imagen podemos apreciar los elementos básicos de una lista.
+
+![imagen](http://s3.amazonaws.com/lyah/listmonster.png)
