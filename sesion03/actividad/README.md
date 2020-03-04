@@ -1,4 +1,4 @@
-[`Lenguajes de Programación`](../../README.md) > [`Sesión 02`](../README.md) > `Actividad`
+[`Lenguajes de Programación`](../../README.md) > [`Sesión 03`](../README.md) > `Actividad`
 
 ## Actividad
 
@@ -12,6 +12,8 @@
 
 #### DESARROLLO
 
-1. Define una función `areaHeron` que haga uso de asignaciones locales `let` para evitar cálculos repetitivos.
+1. Define una función `productoPunto` que realiza el producto punto entre dos pares.
 
-2. Define una función que decide si una cadena es palíndroma, por ejemplo `"Anita lava la tina"` es palíndroma porque se lee igual de derecha izquierda que de izquierda a derecha. Recuerda las funciones sobre cadenas.
+2. Define una función `duplica` que dado un número devuelve el doble del mismo y úsala sobre la lista `[1,2,3,4,5]` usando `map`. ¿Qué devuelve la función?
+
+3. Define una función `multiplo5` que dado un número indica si es un múltiplo de 5 y úsala sobre la lista `[1,2,3,4,5]` usando `filter`. ¿Qué devuelve la función?
