@@ -103,4 +103,5 @@ Algunas funciones definidas para lista son:
 En la siguiente imagen podemos apreciar los elementos básicos de una lista.
 
 ![imagen](http://s3.amazonaws.com/lyah/listmonster.png)
-   *Tomada de: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)*
+
+*Tomada de: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)*
