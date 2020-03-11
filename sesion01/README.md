@@ -1,15 +1,17 @@
 [`Lenguajes de Programación`](../README.md) > `Sesión 01`
 
-## Introducción a Haskell
+## Sesión 1: Introducción a Haskell
 
-### OBJETIVOS 
+<img src="../imagenes/pizarron.png" align="right" height="100" width="100" hspace="10">
+
+### 1. Objetivos :dart:
 
 - Instalar Haskell
 - Conocer los tipos básicos del lenguaje
 - Conocer algunas funciones predefinidas sobre los tipos básicos
 - Definir funciones básicas y conocer su sintaxis
 
-#### ORGANIZACION DE LA CLASE
+#### 2. Organización de la sesión :blue_book:
 
 - Instalación de Haskell
    - [Ejemplo 1](ejemplo01/README.md)

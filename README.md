@@ -1,10 +1,10 @@
 ## Lenguajes de Programación
 
-<img src="imagenes/uacm.jpg" align="right" height="150" width="150">
+<img src="imagenes/uacm.jpg" align="right" height="150" width="150" vspace="40">
 
 ### Información general
 
-<img src="imagenes/haskell.png" align="right" height="100" width="100" hspace="10">
+<img src="imagenes/haskell.png" align="right" height="140" width="140" hspace="10">
 
 **Grupo 302**
 
@@ -21,3 +21,4 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 - [Sesión 1: Introducción a Haskell](sesion01/README.md)
 - [Sesión 2: Asignaciones locales y condicionales](sesion02/README.md)
 - [Sesión 3: Listas](sesion03/README.md)
+- [Sesión 4: Funciones de primera clase](sesion04/README.md)
