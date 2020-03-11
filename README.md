@@ -1,6 +1,6 @@
 ## Lenguajes de Programación
 
-<img src="imagenes/logo.png" align="right" height="200" width="200">
+<img src="imagenes/logo.png" align="right" height="200" width="400">
 
 ### Información general
 
