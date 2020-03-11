@@ -1,10 +1,8 @@
 ## Lenguajes de Programación
 
-<img src="imagenes/uacm.jpg" align="right" height="150" width="150" vspace="40">
+<img src="imagenes/logo.png" align="right" height="200" width="200">
 
 ### Información general
-
-<img src="imagenes/haskell.png" align="right" height="140" width="140" hspace="10">
 
 **Grupo 302**
 
