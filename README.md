@@ -25,6 +25,6 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 #### Unidad 2: Programación Funcional
 - [Sesión 4: Funciones de primera clase](sesion04/README.md)
 - [Sesión 5: Evaluación perezosa](sesion05/README.md)
-- [Sesión 6: Recursión sobre números](sesion06/README.md)
+- [Sesión 6: Recursión](sesion06/README.md)
 
 [`Siguiente`](sesion01/README.md)
