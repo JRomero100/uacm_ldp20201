@@ -366,4 +366,4 @@ areaTotal h d = 2 * pi * (d / 2) * (h + (d/2))
 
 ---
 
-[`Anterior`](../README.md) | `Siguiente`
+[`Anterior`](../README.md) | [`Siguiente`](../sesion02/README.md)
