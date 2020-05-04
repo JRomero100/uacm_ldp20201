@@ -199,4 +199,4 @@ experimenta ejecutando las funciones `absoluto` y `mes`. Observa además la form
 
 ---
 
-[`Anterior`](../sesion01/README.md) | `Siguiente`
+[`Anterior`](../sesion01/README.md) | [`Siguiente`](../sesion03/README.md)

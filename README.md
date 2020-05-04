@@ -20,7 +20,7 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 
 - [Sesión 1: Introducción a __Haskell__](sesion01/README.md)
 - [Sesión 2: Asignaciones Locales y Condicionales](sesion02/README.md)
-- Sesión 3: Estructuras de Datos
+- [Sesión 3: Estructuras de Datos](sesion03/README.md)
 
 #### Unidad 2: Programación Funcional
 - Sesión 4: Funciones de Primera Clase
