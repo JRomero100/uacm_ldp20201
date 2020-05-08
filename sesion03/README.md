@@ -193,4 +193,4 @@ referencia para conocer su documentación: https://hoogle.haskell.org/.
 
 ---
 
-[`Anterior`](../sesion02/README.md) | `Siguiente`
+[`Anterior`](../sesion02/README.md) | [`Siguiente`](../sesion04/README.md)
