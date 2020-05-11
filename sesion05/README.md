@@ -1,187 +1,128 @@
 [`Lenguajes de Programación`](../README.md) > `Sesión 5`
 
-## Sesión 5: Evaluación perezosa
+## Sesión 5: Evaluación Perezosa
 
-Manuel Soto Romero · *17 de marzo de 2020*
+<img src="../imagenes/pizarron.png" align="right" height="100" width="100" hspace="10">
 
-### Introducción
+Como vimos en las Notas de Clase, __Haskell__ es un lenguaje de programación que usa evaluación perezosa. Esto quiere
+decir que los argumentos de las funciones no son evaluados hasta que sean estrictamente necesarios. En particular, 
+revisamos dos ejemplos de construcción de listas infinitas:
 
-<img src="imagenes/imagen1.gif" align="right" height="200" width="200" hspace="10">
-<div style="text-align: justify;">	
-
-La evaluación perezosa es una propiedad de los lenguajes de programación que permite postergar la evaluación de 
-expresiones hasta que sean usadas en un programa.   
-
-__Haskell__ es un lenguaje de programación que hace uso de evaluación perezosa. Tal y como se muestra en la 
-<a href="https://drive.google.com/file/d/1_eE9gZPW1V8isPE1qw0yyTRhBS1VT7Zc/view" target="_blank" >Nota de Clase 5</a>, 
-dos de las principales ventajas de contar con evaluación perezosa son: (1) se evita la evaluación de expresiones que no 
-son usadas jamás en un programa y (2) la definición de estructuras de datos infinitas. En esta sesión, revisaremos 
-principalmente ejemplos de definición de listas infinitas aprovechando el uso de la evaluación perezosa.
-
----
-
-#### Ejemplo 1.
-En la siguiente expresión, nunca es evaluada la división por cero, misma que en un lenguaje con evaluación glotona, 
-generaría un error aunque no sea usada jamás la variable correspondiente.
-
-```
-Sesion5> let a = 10/0 in 2 + 2
-4
-```
-
----
-
-#### Ejemplo 2.
-Las listas en general, pueden ser tratadas como estructura infinitas, debido a la evaluación perezosa. Por ejemplo, 
-podemos definir listas mediante lo que se conoce como *rango*. Un rango permite construir listas mediante los símbolos
-`..`. Por ejemplo, si queremos definir una lista con los números naturales, podemos escribir:
-
-```
-Sesion5> [0..]
-[0,1,2,3,4,5,6,7,8,9,10,...]
-```
-
-Usamos puntos suspensivos para denotar que la lista se vuelve infinita, esto se puede comprobar ejecutando `[0..]` desde
-el intérprete de __Haskell__.
-
----
-
-#### Ejemplo 3.
-Para procesar este tipo de listas infinitas, podemos asignar su definición a una variable y dado que la variable no será
-ejecutada hasta que se solicite, la construcción de la lista se postergará debido a la evaluación glotona. Para asignar
-variables dentro del intérprete se usa `let`.
-
-```
-Sesion5> let nat = [0..]
-```
-
-De esta forma, podemos obtener elementos de la lista, usando las funciones de listas que ya conocemos. Por ejemplo, la
-podemos obtener la cabeza de la lista con `head`.
-
-```
-Sesion5> head nat
-0
-```
-
-Otra función de utilidad podría ser `take` que toma los primeros `n` elementos de una lista. Por ejemplo, si queremos
-obtener los primeros 10 números naturales, escribimos:
-
-```
-Sesion5> take 10 nat
-[0,1,2,3,4,5,6,7,8,9]
-```
-
----
-
-#### Ejemplo 4
-Otra forma de definir listas infinitas es mediante la definición de funciones recursivas. Por ejemplo, la siguiente
-función define una lista infinita de unos:
-
+[**`Ejemplo1.hs`**](codigos/Ejemplo1.hs)
 ```haskell
 unos :: [Int]
 unos = 1:unos
+
+pot2 :: Int -> [Int]
+pot2 n = n:(pot2 (n*2))
 ```
 
-El primer elemento de la lista es un 1, mientras que la cola de la lista es la llamada a la misma lista con la misma 
-estructura, un uno como cabeza y la llamada a ella misma como cola. Estudiaremos el concepto de recursión más adelante.
-
-Si ejecutamos unos, desde el intérprete de __Haskell__ obtenemos una lista infinita de unos.
-
 ```
-Sesion5> unos
-[1,1,1,1...]
-```
-
-Y de la misma forma, podemos obtener los elementos usando las funciones `head` y `take`.
-
-```
-Sesion5> head unos
-1
-Sesion5> take 5 unos
+Prelude> take 5 unos
 [1,1,1,1,1]
+Prelude> take 2 (pot2 2)
+[2,4]
 ```
 
 ---
 
-#### Ejemplo 5
-Esta forma de definir funciones, permite definir listas más complejas, por ejemplo, una lista con los números pares.
-En este caso, la función deberá recibir un parámetro indicando dónde iniciar la lista. 
+> :rocket: **Actividad.**   
+Ejecuta las funciones anteriores, trata de evaluar ambas funciones sin hacer uso de `take` analiza lo que ocurre con la
+evaluación. Cambia el primer elemento de las listas y forma tus propias listas infinitas.
 
-```haskell
-pares :: Int -> [Int]
-pares n = n:(pares n*2)
+---
+
+En esta sesión, construiremos una función que genere números primos usando un algoritmo muy popular llamado [*criba de
+Eratóstenes*](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes).
+
+### :dart: <ins>El Problema</ins>
+
+---
+
+> :warning: **Problema.**   
+Dado un rango de números entre 2 y *n*, elegir únicamente aquellos que sean números primos. Recordar que un número primo
+es un número que sólo es divisible entre 1 y entre sí mismo.
+
+---
+
+El algoritmo consiste en tomar cada elemento del rango y eliminar todos aquellos que sean múltiplos del mismo. El
+algoritmo continúa hasta que al tratar de eliminar quede exactamente la misma lista. Por ejemplo, supongamos que tenemos
+la lista
+
+```
+[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 ```
 
+Como el primer elemento de la lista es el 2, debemos eliminar todos sus múltiplos quedando: 
+
 ```
-Sesion5> pares 2
-[2,4,6,8,10,12,14,...]
-Sesion5> head (pares 2)
-2
-Sesion5> take 5 (pares2)
-[2,4,6,8,10]
+[2,3,5,7,9,11,13,15,17,19]
 ```
 
 ---
 
-#### Ejemplo 6
-Otra forma de definir listas, es mediante lo que se conoce como *lista por comprensión*, similar a los conjuntos por
-comprensión. Por ejemplo, la lista de números pares entre 0 y 10.
+> :rocket: **Actividad.**   
+¿Cómo eliminarías estos elementos usando listas por comprensión? Intenta definir esta lista en __Haskell__.
+
+---
+
+Ahora, continuamos con el siguiente número, que en este caso es 3, por lo tanto eliminamos sus múltiplos quedando:
 
 ```
-Sesion5 > [2*x | x <- [0..5]]
-[0,2,4,6,8,10]
-```
-
-La lista anterior se lee cómo:
-
-*La lista de las equis multiplicadas por dos **tal que** x es la lista de números del 0 al 5*.
-
-Usando este tipo de listas podemos definir una lista de otros tipos de datos. Por ejemplo, podemos construir una lista 
-de pares donde la primera entrada sea un número natural y la segunda entrada sea la aplicación de una función a dicho 
-número.
-
-```haskell
-aplica :: (Int -> a) -> [(Int,a)]
-aplica f = [(x,f x) | x <- [0..]]
-```
-
-Por ejemplo, si usamos la *lambda* `\x -> x+2` se obtiene:
-
-```
-Sesion5> let prueba = aplica (\x -> x+2)
-Sesion5> head prueba
-(0,2)
-Sesion5> take 5 prueba
-[(0,2),(1,3),(2,4),(3,5),(4,6)]
+[2,3,5,7,11,13,17,19]
 ```
 
 ---
 
-### Actividad 5
+> :rocket: **Actividad.**   
+Usando la lista por comprensión que definiste en el ejercicio anterior, define una función que dada una lista y un 
+número entero, elimine todos los múltiplos de ese número de la lista:   
+>   
+> ```quitaMultiplos :: [Int] -> Int -> [Int]```
 
-<img src="imagenes/imagen2.jpeg" align="right" height="200" width="200" hspace="10">
+---
 
+Continuamos ahora con los múltiplos de 5:
 
-Usando listas infinitas (por comprensión), define una función `tablas` que dado un número, construya una lista infinita
-con la tabla de multiplicar de dicho número. 
+```
+[2,3,5,7,11,13,17,19]
+```
 
+Como la lista que intentamos modificar es exactamente igual, el algoritmo finaliza y la lista resultante únicamente 
+tiene números primos. Podemos generalizar este algoritmo para definir una lista *infinita* que genere números primos.
+
+[**`Ejemplo2.hs`**](codigos/Ejemplo2.hs)
 ```haskell
-tablas :: Int -> [(Int,Int,Int)]
-tablas n = ...
+cribaEratostenes :: [Int] -> [Int]
+cribaEratostenes (x:xs) = x:(cribaEratostenes [y | y <- xs, mod y x /= 0])
+
+primos :: [Int]
+primos = cribaEratostenes [2..]
 ```
 
-Por ejemplo:
+- La primera función, implementa el algoritmo de la Criba de Eratóstenes. Dada una lista con cabeza `x` y cola `xs`
+  construye mediante una lista por comprensión, una lista con `x` como cabeza y como resto, elimina de la cola aquellos
+  elementos que sean múltiplos de `x`. Esto se verifica usando el módulo.
+
+  La lista resultante vuelve a pasarse a la función `cribaEratostenes`. Esto es recursión, hablaremos de esto con más
+  detalle en la siguiente sesión.
+
+- La segunda función, genera números primos, simplemente llama a la función `cribaEratostenes` para iniciar desde el
+  número 2. Al tener evaluación perezosa esta lista no se evalúa hasta que le sea requerido, por lo tanto podemos ir
+  tomando elementos de poco a poco usando `take` por ejemplo.
 
 ```
-Actividad5> let cinco = tablas 5
-Actividad5> head cinco
-(5,0,0)
-Actividad5> take 3 cinco
-[(5,0,0),(5,1,5),(5,2,10)]
-Actividad5> cinco !! 6
-(5,5,25)
+Prelude> take 10 primos
+[2,3,5,7,11,13,17,19,23,29]
 ```
 
-</div>
+---
 
-`Anterior` | `Siguiente`
+> :rocket: **Actividad.**   
+Ejecuta el código y analiza su implementación. Prueba generar unos cuantos números primos, pero antes de ejecutar la 
+función, escribe en papel cómo sería la ejecución en cada uno de los pasos. Analiza las llamadas recursivas en cada
+intento.
+
+---
+
+[`Anterior`](../sesion04/README.md) | `Siguiente`

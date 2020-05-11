@@ -172,4 +172,4 @@ Abre el intérprete de __Haskell__ y ejecuta todas las expresiones presentadas. 
 
 ---
 
-[`Anterior`](../sesion03/README.md) | `Siguiente`
+[`Anterior`](../sesion03/README.md) | [`Siguiente`](../sesion05/README.md)
