@@ -33,7 +33,7 @@ Lenguajes de Programación es una materia indispensable en la Licenciatura en In
 #### Unidad 3: Sistemas de Tipos
 - Sesión 9: Sistemas de Tipos
 - Sesión 10: Definición de Tipos de Datos
-- Sesión 11: Tipos de Datos Recursivos
+- [Sesión 11: Tipos de Datos Recursivos](sesion11/README.md)
 - Sesión 12: Verificación de Tipos
 - Sesión 13: Inferencia de Tipos
 
